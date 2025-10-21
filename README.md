@@ -1,73 +1,194 @@
-# Welcome to your Lovable project
+# ISVICREATIVE - Site Institucional
 
-## Project info
+Site front-end moderno desenvolvido com React + Vite, apresentando a ISVICREATIVE e seus serviços de criação de sites profissionais.
 
-**URL**: https://lovable.dev/projects/76c59cea-589d-455d-a753-18fad95ef6aa
+## 🚀 Tecnologias
 
-## How can I edit this code?
+- **React 18** - Biblioteca JavaScript para interfaces
+- **Vite** - Build tool moderna e rápida
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Framework CSS utility-first
+- **shadcn/ui** - Componentes React reutilizáveis
+- **Lucide React** - Ícones SVG
 
-There are several ways of editing your application.
+## 📦 Instalação e Uso
 
-**Use Lovable**
+### Pré-requisitos
+- Node.js 18+ e npm instalados
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/76c59cea-589d-455d-a753-18fad95ef6aa) and start prompting.
+### Passos
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# 1. Clone o repositório
+git clone <URL_DO_REPOSITORIO>
 
-**Use your preferred IDE**
+# 2. Entre na pasta do projeto
+cd isvicreative
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# 3. Instale as dependências
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Rode o servidor de desenvolvimento
 npm run dev
+
+# 5. Acesse no navegador
+http://localhost:8080
 ```
 
-**Edit a file directly in GitHub**
+### Build para Produção
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Gera os arquivos otimizados na pasta dist/
+npm run build
 
-**Use GitHub Codespaces**
+# Preview da build de produção
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔧 Como Trocar os Botões Sociais (WhatsApp / Instagram / Email)
 
-## What technologies are used for this project?
+### Método 1: Arquivo de Configuração (Recomendado)
 
-This project is built with:
+Edite o arquivo `src/config/siteConfig.js`:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```javascript
+export const siteConfig = {
+  // ... outras configs
+  
+  social: {
+    // WhatsApp: formato https://wa.me/CÓDIGO_PAÍS_DDD_NÚMERO
+    whatsapp: "https://wa.me/5511999999999",
+    
+    // Instagram: URL completa do perfil
+    instagram: "https://instagram.com/seu_usuario",
+    
+    // Email: endereço de e-mail
+    email: "contato@seusite.com.br",
+    
+    // Facebook (usado no footer)
+    facebook: "https://facebook.com/sua_pagina",
+    
+    // LinkedIn (usado no footer)
+    linkedin: "https://linkedin.com/company/sua_empresa",
+  },
+  
+  contact: {
+    phone: "(11) 9 9999-9999",
+    email: "contato@seusite.com.br",
+    address: "Sua Cidade, Estado",
+  },
+};
+```
 
-## How can I deploy this project?
+**Deixe vazio (`""`) qualquer rede social que não quiser exibir.**
 
-Simply open [Lovable](https://lovable.dev/projects/76c59cea-589d-455d-a753-18fad95ef6aa) and click on Share -> Publish.
+### Método 2: Trocar os Ícones SVG (Avançado)
 
-## Can I connect a custom domain to my Lovable project?
+Para substituir os ícones padrão por SVGs customizados, edite `src/components/SocialButtons.tsx`:
 
-Yes, you can!
+1. Localize o componente do ícone (ex: `WhatsAppIcon`)
+2. Substitua o código SVG dentro do `return`
+3. Mantenha as classes `className="w-5 h-5"`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Exemplo:
+```tsx
+const WhatsAppIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+    {/* Cole aqui o path do seu SVG customizado */}
+  </svg>
+);
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📧 Configurar Formulário de Contato
+
+O formulário usa Formspree por padrão. Para ativar:
+
+1. Acesse [https://formspree.io](https://formspree.io) e crie uma conta grátis
+2. Crie um novo formulário e copie o endpoint
+3. Edite `src/config/siteConfig.js`:
+
+```javascript
+export const siteConfig = {
+  // ... outras configs
+  
+  formEndpoint: "https://formspree.io/f/SEU_FORM_ID_AQUI",
+};
+```
+
+### Alternativa: Integrar com outro serviço
+
+Para usar outro serviço (como EmailJS, SendGrid, etc.), edite o método `handleSubmit` em `src/components/Contact.tsx`.
+
+## 🎨 Personalizar Cores e Design
+
+### Cores Principais
+
+Edite `src/index.css` (todas as cores em HSL):
+
+```css
+:root {
+  --primary: 282 85% 60%;        /* Roxo principal */
+  --primary-glow: 291 91% 73%;   /* Roxo brilhante */
+  --background: 0 0% 4%;         /* Fundo escuro */
+  --foreground: 0 0% 98%;        /* Texto branco */
+  /* ... */
+}
+```
+
+### Gradientes e Sombras
+
+Também em `src/index.css`:
+
+```css
+--gradient-primary: linear-gradient(135deg, hsl(282 85% 60%), hsl(291 91% 73%));
+--shadow-glow: 0 0 40px hsl(282 85% 60% / 0.3);
+```
+
+## 📱 Deploy
+
+### Vercel (Recomendado)
+
+1. Instale a CLI do Vercel: `npm i -g vercel`
+2. Execute: `vercel`
+3. Siga as instruções na tela
+4. Seu site estará no ar em segundos!
+
+### Outras Plataformas
+
+- **Netlify**: arraste a pasta `dist/` após o build
+- **GitHub Pages**: configure no repositório
+- **Railway**: conecte o repositório Git
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── assets/           # Imagens e assets
+├── components/       # Componentes React
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── Features.tsx
+│   ├── Pricing.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   └── SocialButtons.tsx
+├── config/
+│   └── siteConfig.js # ⭐ CONFIGURAÇÃO CENTRAL
+├── pages/
+│   └── Index.tsx     # Página principal
+└── index.css         # Estilos globais e design system
+```
+
+## 🆘 Suporte
+
+Para dúvidas ou problemas:
+- Abra uma issue no repositório
+- Consulte a documentação do [React](https://react.dev) e [Vite](https://vitejs.dev)
+
+## 📄 Licença
+
+Este projeto é de código aberto. Sinta-se livre para usar e modificar.
+
+---
+
+**Desenvolvido com ❤️ usando React + Vite**
