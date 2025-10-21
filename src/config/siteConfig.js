@@ -12,17 +12,17 @@ export const siteConfig = {
   
   // Redes sociais - deixe vazio ("") para não exibir o botão
   social: {
-    whatsapp: "https://wa.me/5511999999999", // Formato: https://wa.me/CÓDIGO_PAÍS_DDD_NÚMERO
+    whatsapp: "https://wa.me/5551997652633", // Formato: https://wa.me/CÓDIGO_PAÍS_DDD_NÚMERO
     instagram: "https://instagram.com/isvicreative",
     facebook: "https://facebook.com/isvicreative",
     linkedin: "https://linkedin.com/company/isvicreative",
-    email: "contato@isvicreative.com.br",
+    email: "isvicreative@gmail.com.br",
   },
   
   // Informações de contato
   contact: {
-    phone: "(11) 9 9999-9999",
-    email: "contato@isvicreative.com.br",
+    phone: "55 51 997652633",
+    email: "isvicreative@gmail.com.br",
     address: "São Paulo, SP",
   },
   
