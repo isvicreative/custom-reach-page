@@ -37,7 +37,6 @@ const plans = [
     ],
   },
   {
-{
     name: "Prêmio",
     price: "A partir de R$ 200",
     priceDetail: "criação",
@@ -72,7 +71,9 @@ const Pricing = () => {
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Escolha o Plano{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Perfeito</span>{" "}
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              Perfeito
+            </span>{" "}
             para o Seu Negócio
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -105,7 +106,9 @@ const Pricing = () => {
                   <span className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                     {plan.price}
                   </span>
-                  <span className="text-muted-foreground ml-2">{plan.priceDetail}</span>
+                  <span className="text-muted-foreground ml-2">
+                    {plan.priceDetail}
+                  </span>
                 </div>
                 <p className="text-foreground font-medium">{plan.monthly}</p>
               </div>
