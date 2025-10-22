@@ -37,18 +37,26 @@ const plans = [
     ],
   },
   {
-    name: "Prêmio",
-    price: "R$ 200",
-    priceDetail: "criação",
-    monthly: "R$ 69,90/mês",
-    features: [
-      "Tudo do plano Padrão",
-      "Alterações ilimitadas",
-      "Personalização visual extra",
-      "Suporte prioritário 24/7",
-      "Otimização SEO avançada",
-      "Análise integrada",
-    ],
+{
+  name: "Prêmio",
+  price: "A partir de R$ 200",
+  priceDetail: "criação",
+  monthly: "Mensalidade a combinar",
+  features: [
+    "Tudo do plano Padrão",
+    "Alterações ilimitadas",
+    "Personalização visual extra",
+    "Suporte prioritário 24/7",
+    "Otimização SEO avançada",
+    "Análise integrada",
+    "Design exclusivo e personalizado desenvolvido por parceiro especializado",
+  ],
+  details: [
+    { label: "Alterações:", value: "Ilimitadas" },
+    { label: "Domínio:", value: "Incluso (.com.br)" },
+  ],
+}
+
     details: [
       { label: "Alterações:", value: "Ilimitadas" },
       { label: "Domínio:", value: "Incluso (.com.br)" },
